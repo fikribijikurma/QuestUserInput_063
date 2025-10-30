@@ -83,7 +83,10 @@ fun FormDataDiri(modifier: Modifier
                 alamat = textAlamat
                 jk = textJK
             }
-        )
+        ){
+            Text(text = stringResource(R.string.submit))
+
+        }
 
 
     }
