@@ -105,6 +105,14 @@ fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada 
             thickness = dimensionResource(R.dimen.divider_tipis),
             color = Color.DarkGray
         )
+
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.Black),
+            modifier = Modifier
+                .height(100.dp)
+                .width(300.dp)
+        ) { }
         // Contoh untuk menampilkan data yang sudah disubmit (opsional)
         if (nama.isNotEmpty()){
             Spacer(modifier = Modifier.height(24.dp))
