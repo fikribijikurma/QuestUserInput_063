@@ -1,5 +1,6 @@
 package com.example.myquestuserinput
 
+import androidx.compose.foundation.layout.Column
 import java.lang.reflect.Modifier
 
 @Composable
@@ -17,4 +18,10 @@ fun FormDataDiri(modifier: Modifier
 
     val gender: List<String> = listOf("Laki-laki", "Perempuan")
 
+    Column { modifier = Modifier.padding(top = 50.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    } {
+
+    }
 }
