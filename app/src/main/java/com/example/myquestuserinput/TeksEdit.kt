@@ -14,14 +14,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada modifier
-    // Variabel-variabel untuk mengingat nilai masukan dari keyboard
+fun FormDataDiri(modifier: Modifier = Modifier) {
+
     var textNama by remember { mutableStateOf("") }
     var textAlamat by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
 
-    // Variabel-variabel untuk menyimpan data yang diperoleh setelah tombol ditekan
-    // (Sebenarnya variabel ini tidak wajib jika data akan langsung dikirim ke tempat lain)
     var nama by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var jk by remember { mutableStateOf("") }
@@ -29,10 +27,10 @@ fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada 
     val gender: List<String> = listOf("Laki-laki", "Perempuan")
 
     Column(
-        // PERBAIKAN: Modifier ditempatkan di dalam kurung Column
+
         modifier = modifier
-            .fillMaxSize() // Memenuhi layar
-            .padding(horizontal = 16.dp), // Padding kiri dan kanan
+            .fillMaxSize()
+            .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -40,7 +38,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada 
             value = textNama,
             singleLine = true,
             shape = MaterialTheme.shapes.large,
-            modifier = Modifier.fillMaxWidth(), // Menggunakan fillMaxWidth agar lebih responsif
+            modifier = Modifier.fillMaxWidth(),
             label = { Text(text = "Nama Lengkap") },
             onValueChange = {
                 textNama = it
@@ -49,7 +47,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada 
 
         Spacer(modifier = Modifier.height(16.dp)) // Memberi jarak
 
-        // PERBAIKAN: Tata letak RadioButton yang benar
+
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly // Menyebar opsi gender
@@ -87,13 +85,11 @@ fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada 
 
         Button(
             modifier = Modifier.fillMaxWidth(),
-            // Tombol aktif jika semua input tidak kosong
             enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty() && textJK.isNotEmpty(),
             onClick = {
                 nama = textNama
                 alamat = textAlamat
                 jk = textJK
-                // Di sini Anda bisa menambahkan logika lain, seperti navigasi atau menampilkan data
             }
         ) {
             Text(text = stringResource(R.string.submit))
@@ -119,7 +115,8 @@ fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada 
                 Text(text = "Alamat: $alamat", color = Color.White)
             }
         }
-        // Contoh untuk menampilkan data yang sudah disubmit (opsional)
+        Spacer(modifier = Modifier.height(24.dp))
+
         if (nama.isNotEmpty()){
             Spacer(modifier = Modifier.height(24.dp))
             Divider(thickness = 1.dp, color = Color.Gray)
