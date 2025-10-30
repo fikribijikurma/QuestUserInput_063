@@ -112,7 +112,13 @@ fun FormDataDiri(modifier: Modifier = Modifier) { // Memberi nilai default pada 
             modifier = Modifier
                 .height(100.dp)
                 .width(300.dp)
-        ) { }
+        ) {
+            Column (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),){
+                Text(text = "Nama: $nama", color = Color.White)
+                Text(text = "Jenis Kelamin: $jk", color = Color.White)
+                Text(text = "Alamat: $alamat", color = Color.White)
+            }
+        }
         // Contoh untuk menampilkan data yang sudah disubmit (opsional)
         if (nama.isNotEmpty()){
             Spacer(modifier = Modifier.height(24.dp))
