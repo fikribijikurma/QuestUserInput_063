@@ -1,6 +1,7 @@
 package com.example.myquestuserinput
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.ui.unit.dp
 import java.lang.reflect.Modifier
 
 @Composable
@@ -20,8 +21,17 @@ fun FormDataDiri(modifier: Modifier
 
     Column { modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    } {
+        horizontalAlignment = Alignment.CenterHorizontally) {
+            OutlinedTextField(
+                value = textNama,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier.width(widht = 250.dp),
+                label = { Text(text = "Nama Lengkap") },
+                onValueChange = {
+                    textNama = it
+                }
+        }
 
     }
 }
